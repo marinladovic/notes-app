@@ -1,4 +1,8 @@
-import { useSaveNote, useDeleteNote, useUpdateNote } from '../../store/notes';
+import {
+  useSaveNote,
+  useDeleteNote,
+  useUpdateNote,
+} from '../../hooks/useNotes';
 import { INote } from '../../typings';
 
 export const CloseNoteDialogBtn = ({ onClose }: { onClose: () => void }) => {

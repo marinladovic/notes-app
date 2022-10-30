@@ -1,17 +1,10 @@
-export const dummyText = `# This is a header
-## This is a sub header
+export const dummyText = `# Note Heading
+## Subheading
 
 ---
 
-[This is a link](https://www.google.com)
+**Shopping list**
 
-**This is bold text**
-
-*This is italicized text*
-
-This is a paragraph
-
-- This is a list item
-
-- This is another list item
-  `;
+* Milk
+* Cookies
+* Apples`;

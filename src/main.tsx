@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { NoteProvider } from './store/notes';
+import { NoteProvider } from './hooks/useNotes';
 import App from './App';
 import './index.css';
 

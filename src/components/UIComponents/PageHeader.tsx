@@ -1,3 +1,4 @@
+import React from 'react';
 interface Props {
   pageTitle: { main: string; subheading?: string };
 }
@@ -10,9 +11,7 @@ function PageHeader(props: Props) {
       <h1 className="flex flex-col items-center gap-y-0.5 uppercase text-2xl md:text-3xl">
         {pageTitle.main}
         {pageTitle.subheading && (
-          <span className="text-base capitalize md:text-lg">
-            {pageTitle.subheading}
-          </span>
+          <span className="text-base capitalize md:text-lg">{pageTitle.subheading}</span>
         )}
       </h1>
     </header>

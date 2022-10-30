@@ -21,17 +21,12 @@ function Note(props: Props) {
           type === 'create'
             ? 'bg-black text-white text-2xl flex items-center justify-center'
             : 'bg-white '
-        }`}
-      >
+        }`}>
         <ReactMarkdown>{children as string}</ReactMarkdown>
       </div>
 
       {showNoteDialog && (
-        <NoteDialog
-          onClose={() => setShowNoteDialog(!showNoteDialog)}
-          type={type}
-          note={note}
-        />
+        <NoteDialog onClose={() => setShowNoteDialog(!showNoteDialog)} type={type} note={note} />
       )}
     </>
   );

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { INote } from '../typings';
 
 const useNotes = () => {
@@ -34,9 +34,7 @@ const useNotes = () => {
     const notes = localStorage.getItem('notes');
     if (notes) {
       const notesArray = JSON.parse(notes);
-      const newNotesArray = notesArray.filter(
-        (noteItem: INote) => noteItem.id !== note.id
-      );
+      const newNotesArray = notesArray.filter((noteItem: INote) => noteItem.id !== note.id);
       localStorage.setItem('notes', JSON.stringify(newNotesArray));
       setNotes(newNotesArray);
     }
@@ -62,15 +60,13 @@ const useNotes = () => {
     notes,
     saveNote,
     deleteNote,
-    updateNote,
+    updateNote
   };
 };
 
 const NoteContext = createContext({} as ReturnType<typeof useNotes>);
 export const NoteProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <NoteContext.Provider value={useNotes()}>{children}</NoteContext.Provider>
-  );
+  return <NoteContext.Provider value={useNotes()}>{children}</NoteContext.Provider>;
 };
 
 export const useNotesSelector = () => useContext(NoteContext).notes;

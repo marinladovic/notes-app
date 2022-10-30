@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { INote } from '../typings';
 
+type UseNotesReturnType = ReturnType<typeof useNotes>;
+
 const useNotes = () => {
   const [notes, setNotes] = useState<INote[]>([]);
 
@@ -64,7 +66,7 @@ const useNotes = () => {
   };
 };
 
-const NoteContext = createContext({} as ReturnType<typeof useNotes>);
+const NoteContext = createContext<UseNotesReturnType>({} as UseNotesReturnType);
 export const NoteProvider = ({ children }: { children: React.ReactNode }) => {
   return <NoteContext.Provider value={useNotes()}>{children}</NoteContext.Provider>;
 };

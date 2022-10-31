@@ -1,4 +1,4 @@
-export const dummyText = `# Note Heading
+const dummyText = `# Note Heading
 ## Subheading
 
 ---
@@ -8,3 +8,5 @@ export const dummyText = `# Note Heading
 * Milk
 * Cookies
 * Apples`;
+
+export default dummyText;

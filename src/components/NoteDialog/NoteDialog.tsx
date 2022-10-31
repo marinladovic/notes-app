@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { INote } from '../../typings';
-import generateRandomId from '../../utils/gengerateRandomId';
-import { dummyText } from '../../utils/dummyText';
 import NoteDialogBtn from './NoteDialogBtn';
+import generateId from '../../utils/generateId';
+import dummyText from '../../utils/dummyText';
+import { INote } from '../../typings';
 
 interface Props {
 	onClose: () => void;
@@ -16,11 +16,11 @@ function NoteDialog(props: Props) {
 	const [displayedNote, setDisplayedNote] = useState<INote>({} as INote);
 	const [isEditing, setIsEditing] = useState(false);
 
-	// Set displayed note to dummy note or note prop if it exists
+	// Set displayedNote to dummy note or note prop
 	useEffect(() => {
 		if (type === 'create') {
 			setDisplayedNote({
-				id: generateRandomId(),
+				id: generateId(),
 				text: dummyText
 			});
 			setIsEditing(true);

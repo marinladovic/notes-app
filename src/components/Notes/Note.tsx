@@ -26,13 +26,13 @@ function Note(props: Props) {
 				<ReactMarkdown>{children as string}</ReactMarkdown>
 			</div>
 
-			{showNoteDialog && (
+			{showNoteDialog ? (
 				<NoteDialog
 					onClose={() => setShowNoteDialog(!showNoteDialog)}
 					type={type}
 					note={note}
 				/>
-			)}
+			) : null}
 		</>
 	);
 }

@@ -6,7 +6,6 @@ type UseNotesReturnType = ReturnType<typeof useNotes>;
 const useNotes = () => {
 	const [notes, setNotes] = useState<INote[]>([]);
 
-	// Check for notes in local storage and add them to state
 	useEffect(() => {
 		const notes = localStorage.getItem('notes');
 		if (notes) {
@@ -17,7 +16,6 @@ const useNotes = () => {
 		}
 	}, []);
 
-	// Save note to local storage and update state
 	const saveNote = (note: INote) => {
 		const savedNotes = localStorage.getItem('notes');
 		if (savedNotes) {
@@ -31,7 +29,6 @@ const useNotes = () => {
 		}
 	};
 
-	// Delete note from local storage and update state
 	const deleteNote = (note: INote) => {
 		const notes = localStorage.getItem('notes');
 		if (notes) {
@@ -44,7 +41,6 @@ const useNotes = () => {
 		}
 	};
 
-	// Update note in local storage and update state
 	const updateNote = (editedNote: INote) => {
 		const notes = localStorage.getItem('notes');
 		if (notes) {

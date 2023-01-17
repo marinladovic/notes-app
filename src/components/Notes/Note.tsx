@@ -3,14 +3,13 @@ import ReactMarkdown from 'react-markdown';
 import { INote } from '../../typings';
 import NoteDialog from '../NoteDialog/NoteDialog';
 
-interface Props {
+interface IProps {
 	type: 'create' | 'note';
 	note?: INote;
 	children: React.ReactNode;
 }
 
-function Note(props: Props) {
-	const { type, note, children } = props;
+function Note({ type, note, children }: IProps) {
 	const [showNoteDialog, setShowNoteDialog] = useState(false);
 
 	return (

@@ -21,14 +21,11 @@ function NoteDialogBtn(props: Props) {
 
 	const handleClick = () => {
 		if (type === 'save') {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			saveNote(note!);
+			note && saveNote(note);
 		} else if (type === 'update') {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			updateNote(note!);
+			note && updateNote(note);
 		} else if (type === 'delete') {
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			deleteNote(note!);
+			note && deleteNote(note);
 		}
 		onCloseOrToggle();
 	};

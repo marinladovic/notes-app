@@ -71,7 +71,10 @@ function NoteDialog(props: Props) {
 									<NoteDialogBtn
 										type="update"
 										note={displayedNote}
-										onCloseOrToggle={() => setIsEditing(!isEditing)}
+										onCloseOrToggle={() => {
+											onClose();
+											setIsEditing(!isEditing);
+										}}
 									>
 										Update
 									</NoteDialogBtn>

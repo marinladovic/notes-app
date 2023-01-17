@@ -2,15 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { INote } from '../../typings';
 import Note from './Note';
 
-interface Props {
+interface IProps {
 	notes: INote[];
 }
 
-function NoteList(props: Props) {
-	const { notes } = props;
+function NoteList({ notes }: IProps) {
 	const [hasNotes, setHasNotes] = useState(false);
 
-	// Check for notes
 	useEffect(() => {
 		if (notes.length > 0) {
 			setHasNotes(true);
